@@ -1,0 +1,76 @@
+/** 现代青春风格组件 */
+
+@layer utilities {
+  .logo-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+
+  @media (min-width: 768px) {
+    .logo-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  .creator-btn {
+    background: linear-gradient(135deg, var(--color-brand-500), var(--color-accent-500));
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1.125rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--color-brand-500) 35%, transparent);
+  }
+
+  .creator-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--color-brand-500) 40%, transparent);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-violet-500/25 transition-all hover:shadow-lg hover:shadow-violet-500/30;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-white/15 px-6 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-violet-200 bg-white px-6 py-2.5 text-sm font-semibold text-violet-800 shadow-sm transition-all hover:border-violet-300 hover:bg-violet-50;
+  }
+
+  .card {
+    @apply overflow-hidden rounded-2xl border border-violet-100/80 bg-white shadow-md shadow-violet-500/5;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/40 bg-white/70 shadow-xl shadow-violet-900/10 backdrop-blur-md;
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, var(--color-brand-500), var(--color-accent-500));
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      #7c3aed 0%,
+      #6366f1 40%,
+      #ec4899 100%
+    );
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-violet-700;
+  }
+}

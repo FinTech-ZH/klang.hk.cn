@@ -1,0 +1,24 @@
+/** CityUHK 灵感配色 — 紫罗兰 + 珊瑚 +  cyan，青春现代 */
+@theme inline {
+  --font-sans: var(--font-inter);
+
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-300: #c4b5fd;
+  --color-brand-400: #a78bfa;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c3aed;
+  --color-brand-700: #6d28d9;
+
+  --color-accent-500: #f472b6;
+  --color-accent-600: #ec4899;
+
+  --color-surface: #fafaff;
+  --color-header: #ffffff;
+  --color-header-border: #e9e5ff;
+  --color-hero-from: #7c3aed;
+  --color-hero-to: #4f46e5;
+
+  --color-foreground: #1e1b4b;
+  --color-muted: #64748b;
+}

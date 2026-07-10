@@ -1,0 +1,12 @@
+{
+  "name": "klang.hk.cn",
+  "private": true,
+  "scripts": {
+    "overlay": "node scripts/apply-overlay.mjs",
+    "reset": "node scripts/reset-web.mjs",
+    "dev": "node scripts/apply-overlay.mjs && npm run dev --prefix apps/web",
+    "build": "node scripts/apply-overlay.mjs && npm run build --prefix apps/web",
+    "upgrade": "node scripts/upgrade-web.mjs",
+    "upgrade:check": "node scripts/upgrade-web.mjs --check"
+  }
+}
