@@ -1,6 +1,6 @@
 /** 首页右侧「本学期概览」— 替代 carousel */
 export const overview = {
-  semester: "2024-25 第二学期",
+  semester: "2026-09 第一学期",
   school: "City University of Hong Kong",
   program: "金融科技 · 商学院",
   courses: [

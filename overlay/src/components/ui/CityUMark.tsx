@@ -1,24 +1,39 @@
-/** 城大风格标识 — 抽象几何 mark，非官方 Logo */
+/** 站点标识 — 与 favicon / icon 一致 */
 export default function CityUMark({ className = "h-9 w-9" }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 40 40"
+      viewBox="0 0 512 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden
     >
-      <rect width="40" height="40" rx="11" fill="url(#cityu-grad)" />
+      <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#mark-bg)" />
+      <ellipse cx="196" cy="156" rx="140" ry="100" fill="url(#mark-shine)" />
+      <circle cx="392" cy="120" r="28" fill="#FBBF24" />
+      <circle cx="392" cy="120" r="18" fill="#FDE68A" opacity="0.55" />
       <path
-        d="M12 28V12h8.5c4.2 0 6.5 2.2 6.5 5.5 0 2.5-1.3 4.2-3.5 5l4.5 5.5h-4.8l-4-5H16v5H12zm4-9h4c1.8 0 2.8-.9 2.8-2.3S21.8 14.5 20 14.5h-4v4.5z"
-        fill="white"
+        fill="#FFFFFF"
+        d="M148 356V156h52c38 0 58 18 58 46 0 20-9 36-26 44l52 62h-62l-46-55h-28v55h-48zm48-98h36c16 0 25-8 25-21s-9-21-25-21h-36v42z"
       />
-      <circle cx="30" cy="10" r="3" fill="#FBBF24" opacity="0.9" />
+      <path
+        d="M300 332 L338 292 L372 312 L412 248"
+        stroke="#FFFFFF"
+        strokeWidth="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.92"
+      />
+      <circle cx="412" cy="248" r="10" fill="#22D3EE" />
       <defs>
-        <linearGradient id="cityu-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#8B5CF6" />
-          <stop offset="0.5" stopColor="#A855F7" />
+        <linearGradient id="mark-bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#7C3AED" />
+          <stop offset="0.45" stopColor="#A855F7" />
           <stop offset="1" stopColor="#EC4899" />
+        </linearGradient>
+        <linearGradient id="mark-shine" x1="128" y1="96" x2="320" y2="280" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FFFFFF" stopOpacity="0.28" />
+          <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

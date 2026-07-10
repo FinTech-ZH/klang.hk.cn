@@ -9,6 +9,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -127,6 +128,13 @@ function applyComponents() {
   console.log(`  copy  src/components/ ← overlay/src/components/`);
 }
 
+function renderThemeIcons() {
+  const script = path.join(OVERLAY, "scripts/render-icons.mjs");
+  if (!fs.existsSync(script)) return;
+  console.log("  render theme icons…");
+  execSync(`node "${script}"`, { cwd: ROOT, stdio: "inherit" });
+}
+
 function main() {
   if (!fs.existsSync(WEB)) {
     console.error("错误: apps/web 不存在，请先 git submodule update --init");
@@ -140,6 +148,9 @@ function main() {
   }
 
   console.log(`Applying overlay (theme=${THEME_NAME})...\n`);
+
+  // 0. 从 mark.svg 生成 favicon / icon
+  renderThemeIcons();
 
   // 1. 主题目录：复制到 apps/web（symlink 指向项目外时 Turbopack 无法解析）
   const themeDest = path.join(WEB, "theme", THEME_NAME);

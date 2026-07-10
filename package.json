@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "overlay": "node scripts/apply-overlay.mjs",
+    "icons": "node overlay/scripts/render-icons.mjs",
     "reset": "node scripts/reset-web.mjs",
     "dev": "node scripts/apply-overlay.mjs && npm run dev --prefix apps/web",
     "build": "node scripts/apply-overlay.mjs && npm run build --prefix apps/web",
