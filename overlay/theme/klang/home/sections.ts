@@ -18,7 +18,7 @@ export const sections = {
   },
   topics: {
     title: "专题学习",
-    description: "围绕金融科学核心课程与主题的学习整理",
+    description: "围绕金融科技核心课程与主题的学习整理",
     items: [
       {
         title: "投资学与资产定价",

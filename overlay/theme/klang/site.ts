@@ -1,17 +1,17 @@
 /** 站点基础信息 — CityUHK 青春现代风 */
 export const site = {
   name: "CityUHK 学习笔记",
-  title: "金融科学学习笔记",
-  titleSuffix: "CityUHK · 金融科学",
+  title: "金融科技学习笔记",
+  titleSuffix: "CityUHK · 金融科技",
   description:
-    "香港城市大学金融科学专业学生的课程笔记与学习记录，探索、记录、分享每一学期的成长。",
+    "香港城市大学金融科技专修（CFFT）学生的课程笔记与学习记录，探索、记录、分享每一学期的成长。",
   domain: process.env.NEXT_PUBLIC_SITE_URL ?? "https://klang.hk.cn",
   beian: "",
   contact: "contact@klang.hk.cn",
   keywords: [
     "CityUHK",
     "香港城市大学",
-    "金融科学",
+    "金融科技",
     "学习笔记",
     "城大",
   ],
@@ -25,7 +25,7 @@ export const site = {
     mark: "C",
     footer: {
       prefix: "CityUHK",
-      highlight: "金融科学",
+      highlight: "金融科技",
     },
   },
   copyright: "klang.hk.cn · 个人学习空间",

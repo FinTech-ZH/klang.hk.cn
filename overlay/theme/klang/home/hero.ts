@@ -1,6 +1,6 @@
 /** 首页 Hero 区域文案 */
 export const hero = {
-  badge: "CityUHK · 金融科学",
+  badge: "CityUHK · 金融科技",
   title: {
     before: "探索",
     highlight: "学习",

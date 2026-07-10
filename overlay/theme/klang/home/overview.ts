@@ -2,7 +2,7 @@
 export const overview = {
   semester: "2024-25 第二学期",
   school: "City University of Hong Kong",
-  program: "金融科学 · 商学院",
+  program: "金融科技 · 商学院",
   courses: [
     { name: "投资学", code: "FIN3001", note: "有效前沿 · CAPM" },
     { name: "公司金融", code: "FIN2003", note: "DCF 估值案例" },
