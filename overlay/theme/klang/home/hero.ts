@@ -1,6 +1,6 @@
 /** 首页 Hero 区域文案 */
 export const hero = {
-  badge: "CityUHK · 企业金融与金融科技",
+  badge: "CityUHK · 金融科技 · 商学院",
   title: {
     before: "金融与科技",
     highlight: "学习笔记",
