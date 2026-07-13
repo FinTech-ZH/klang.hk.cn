@@ -132,7 +132,11 @@ function renderThemeIcons() {
   const script = path.join(OVERLAY, "scripts/render-icons.mjs");
   if (!fs.existsSync(script)) return;
   console.log("  render theme icons…");
-  execSync(`node "${script}"`, { cwd: ROOT, stdio: "inherit" });
+  execSync(`node "${script}"`, {
+    cwd: ROOT,
+    stdio: "inherit",
+    env: { ...process.env, KLANG_ROOT: ROOT },
+  });
 }
 
 function main() {
