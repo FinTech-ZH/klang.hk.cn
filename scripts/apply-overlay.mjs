@@ -128,6 +128,14 @@ function applyComponents() {
   console.log(`  copy  src/components/ ← overlay/src/components/`);
 }
 
+function applyNextConfig() {
+  const src = path.join(OVERLAY, "next.config.ts");
+  const dest = path.join(WEB, "next.config.ts");
+  if (!fs.existsSync(src)) return;
+  fs.copyFileSync(src, dest);
+  console.log(`  copy  next.config.ts ← overlay/next.config.ts`);
+}
+
 function renderThemeIcons() {
   const script = path.join(OVERLAY, "scripts/render-icons.mjs");
   if (!fs.existsSync(script)) return;
@@ -180,6 +188,9 @@ function main() {
 
   // 7. 定制组件（首页布局、Header 等）
   applyComponents();
+
+  // 8. next.config.ts（turbopack.root 等 monorepo 适配）
+  applyNextConfig();
 
   const carouselPath = path.join(WEB, "src/components/home/Carousel.tsx");
   if (fs.existsSync(carouselPath)) {

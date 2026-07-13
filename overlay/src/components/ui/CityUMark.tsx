@@ -1,4 +1,4 @@
-/** 站点标识 — 与 favicon / icon 一致 */
+/** 站点标识 — CityU 橙红渐变 */
 export default function CityUMark({ className = "h-9 w-9" }: { className?: string }) {
   return (
     <svg
@@ -8,32 +8,25 @@ export default function CityUMark({ className = "h-9 w-9" }: { className?: strin
       className={className}
       aria-hidden
     >
-      <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#mark-bg)" />
-      <ellipse cx="196" cy="156" rx="140" ry="100" fill="url(#mark-shine)" />
-      <circle cx="392" cy="120" r="28" fill="#FBBF24" />
-      <circle cx="392" cy="120" r="18" fill="#FDE68A" opacity="0.55" />
+      <rect x="32" y="32" width="448" height="448" rx="96" fill="url(#mark-bg)" />
       <path
         fill="#FFFFFF"
         d="M148 356V156h52c38 0 58 18 58 46 0 20-9 36-26 44l52 62h-62l-46-55h-28v55h-48zm48-98h36c16 0 25-8 25-21s-9-21-25-21h-36v42z"
       />
       <path
-        d="M300 332 L338 292 L372 312 L412 248"
+        d="M296 340 L336 300 L368 318 L408 260"
         stroke="#FFFFFF"
-        strokeWidth="16"
+        strokeWidth="14"
         strokeLinecap="round"
         strokeLinejoin="round"
-        opacity="0.92"
+        opacity="0.9"
       />
-      <circle cx="412" cy="248" r="10" fill="#22D3EE" />
+      <circle cx="408" cy="260" r="9" fill="#FFFFFF" />
       <defs>
-        <linearGradient id="mark-bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#7C3AED" />
-          <stop offset="0.45" stopColor="#A855F7" />
-          <stop offset="1" stopColor="#EC4899" />
-        </linearGradient>
-        <linearGradient id="mark-shine" x1="128" y1="96" x2="320" y2="280" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FFFFFF" stopOpacity="0.28" />
-          <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
+        <linearGradient id="mark-bg" x1="80" y1="64" x2="432" y2="448" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#F58220" />
+          <stop offset="0.55" stopColor="#C4364A" />
+          <stop offset="1" stopColor="#8E1A31" />
         </linearGradient>
       </defs>
     </svg>

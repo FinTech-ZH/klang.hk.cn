@@ -4,7 +4,9 @@ import { esserver } from "@/lib/config";
 import {
   get_chapter_author,
   get_books,
+  get_books_by_labels,
   get_blogs,
+  get_blogs_by_labels,
   get_users_profile,
   get_browselog_count,
   get_book_id,
@@ -158,9 +160,74 @@ export async function fetchBlogs(
 ): Promise<EventStoreItem[]> {
   return withEventStore(async () => {
     const raw = await subscribeCollect<EventStoreItem>((cb) =>
-      get_blogs(null, 2, offset, limit, cb)
+      get_blogs(null, 0, offset, limit, cb)
     );
-    return raw.filter(Boolean).map(normalizeEventId).map(parseBlogData);
+    return raw
+      .filter(Boolean)
+      .map(normalizeEventId)
+      .map(parseBlogData);
+  });
+}
+
+/** 解析 URL ?labels=操作系统,AI → ["操作系统", "AI"]（支持中英文逗号） */
+export function parseLabelsFromSearchParam(param: string | undefined): string[] {
+  if (!param?.trim()) return [];
+  return param
+    .split(/[,，]/)
+    .map((label) => label.trim())
+    .filter(Boolean);
+}
+
+/**
+ * 按 labels 查博客列表
+ * - 1 个 label：包含该标签即可
+ * - 多个 label：必须同时包含全部标签（$all）
+ */
+export async function fetchBlogsByLabels(
+  labels: string[],
+  offset = 0,
+  limit = 10
+): Promise<EventStoreItem[]> {
+  if (labels.length === 0) {
+    return fetchBlogs(offset, limit);
+  }
+
+  const matchAll = labels.length > 1;
+  const queryLabels = labels.length === 1 ? labels[0] : labels;
+
+  return withEventStore(async () => {
+    const raw = await subscribeCollect<EventStoreItem>((cb) =>
+      get_blogs_by_labels(queryLabels, null, 2, offset, limit, cb, matchAll)
+    );
+    return raw
+      .filter(Boolean)
+      .map(normalizeEventId)
+      .map(parseBlogData);
+  });
+}
+
+/**
+ * 按 labels 查书籍列表
+ * - 1 个 label：包含该标签即可
+ * - 多个 label：必须同时包含全部标签（$all）
+ */
+export async function fetchBooksByLabels(
+  labels: string[],
+  offset = 0,
+  limit = 10
+): Promise<EventStoreItem[]> {
+  if (labels.length === 0) {
+    return fetchBooks(offset, limit);
+  }
+
+  const matchAll = labels.length > 1;
+  const queryLabels = labels.length === 1 ? labels[0] : labels;
+
+  return withEventStore(async () => {
+    const raw = await subscribeCollect<EventStoreItem>((cb) =>
+      get_books_by_labels(queryLabels, null, offset, limit, cb, matchAll)
+    );
+    return raw.filter(Boolean).map(normalizeEventId);
   });
 }
 
@@ -170,9 +237,12 @@ export async function fetchTopics(
 ): Promise<EventStoreItem[]> {
   return withEventStore(async () => {
     const raw = await subscribeCollect<EventStoreItem>((cb) =>
-      get_topics(null, 2, offset, limit, cb)
+      get_topics(null, 0, offset, limit, cb)
     );
-    return raw.filter(Boolean).map(normalizeEventId).map(parseBlogData);
+    return raw
+      .filter(Boolean)
+      .map(normalizeEventId)
+      .map(parseBlogData);
   });
 }
 

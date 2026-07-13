@@ -1,24 +1,28 @@
-/** CityUHK 灵感配色 — 紫罗兰 + 珊瑚 +  cyan，青春现代 */
+/** CityUHK 官方标识配色 — Burgundy Red + Orange */
 @theme inline {
   --font-sans: var(--font-inter);
 
-  --color-brand-50: #f5f3ff;
-  --color-brand-100: #ede9fe;
-  --color-brand-300: #c4b5fd;
-  --color-brand-400: #a78bfa;
-  --color-brand-500: #8b5cf6;
-  --color-brand-600: #7c3aed;
-  --color-brand-700: #6d28d9;
+  --color-brand-50: #fdf3f4;
+  --color-brand-100: #fce8ea;
+  --color-brand-200: #f5c6cc;
+  --color-brand-300: #e8929c;
+  --color-brand-400: #c44d5e;
+  --color-brand-500: #a31f34;
+  --color-brand-600: #8e1a31;
+  --color-brand-700: #721428;
+  --color-brand-800: #5c101f;
+  --color-brand-900: #4a0d19;
 
-  --color-accent-500: #f472b6;
-  --color-accent-600: #ec4899;
+  --color-accent-400: #f79a3d;
+  --color-accent-500: #f58220;
+  --color-accent-600: #e06e10;
 
-  --color-surface: #fafaff;
+  --color-surface: #fafafa;
   --color-header: #ffffff;
-  --color-header-border: #e9e5ff;
-  --color-hero-from: #7c3aed;
-  --color-hero-to: #4f46e5;
+  --color-header-border: #e8e8e8;
+  --color-hero-from: #fffdfb;
+  --color-hero-to: #fdf3f4;
 
-  --color-foreground: #1e1b4b;
-  --color-muted: #64748b;
+  --color-foreground: #333333;
+  --color-muted: #666666;
 }
